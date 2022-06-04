@@ -1,12 +1,16 @@
 package com.hmbsoftwares.dscatalog.entities;
 
 import java.io.Serializable;
+import java.time.Instant;
 import java.util.Objects;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.PrePersist;
+import javax.persistence.PreUpdate;
 import javax.persistence.Table;
 
 
@@ -20,6 +24,13 @@ public class Category implements Serializable{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String name;
+	
+	@Column(columnDefinition = "TIMESTAMP WITHOUT TIME ZONE")
+	private Instant createdAt;
+	
+	@Column(columnDefinition = "TIMESTAMP WITHOUT TIME ZONE")
+	private Instant updatedAt;
+
 	
 	public Category(){
 		
@@ -46,6 +57,27 @@ public class Category implements Serializable{
 	public void setName(String name) {
 		this.name = name;
 	}
+
+	public Instant getCreatedAt() {
+		return createdAt;
+	}
+
+	public Instant getUpdatedAt() {
+		return updatedAt;
+	}
+	
+	//sempre que chamar um save e for a primeira vez, esse método será chamado para atualizar o momento criado
+	@PrePersist
+	public void prePersist() {
+		createdAt = Instant.now();
+	}
+	
+	//sempre q for um save pra atualizar, vai chamar esse método pra atualizar o momento que foi atualizado
+	@PreUpdate
+	public void preUpdate() {
+		updatedAt = Instant.now();
+	}
+	
 
 	@Override
 	public int hashCode() {
