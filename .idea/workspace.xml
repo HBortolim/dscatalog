@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b5864422-2a46-4f94-baad-a1d0c7185da6" name="Changes" comment="">
+    <list default="true" id="b5864422-2a46-4f94-baad-a1d0c7185da6" name="Changes" comment="Project Full completed">
       <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/dscatalog.iml" afterDir="false" />
@@ -104,14 +104,14 @@
       <change afterPath="$PROJECT_DIR$/.idea/libraries/Spring_5_2_3_RELEASE.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/libraries/Spring_Data_JPA_2_2_4_RELEASE.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/libraries/Spring_MVC_5_2_3_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/sqlDataSources.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/hmbsoftwares/dscatalog/resources/CategoryResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/hmbsoftwares/dscatalog/resources/CategoryResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/hmbsoftwares/dscatalog/DscatalogApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/hmbsoftwares/dscatalog/DscatalogApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/hmbsoftwares/dscatalog/services/CategoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/hmbsoftwares/dscatalog/services/CategoryService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,7 +127,10 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../bds01" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../bds02" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/../../H2W DEV/h2w_promos/cute/ap_person_report.jsp" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
   </component>
   <component name="JpbToolWindowState">
     <option name="myId2FirstActivated">
@@ -157,11 +160,10 @@
     </option>
   </component>
   <component name="ProjectId" id="2AyYfWJEzB4NUaFajoDZ6UiIvuw" />
-  <component name="ProjectLevelVcsManager">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
   </component>
   <component name="ProjectViewState">
-    <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
@@ -174,7 +176,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/ws-bootcamp/bds01",
+    "last_opened_file_path": "D:/ws-bootcamp/bds02/src/main/java/com/devsuperior/bds02/controllers",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -182,7 +184,7 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.sourceCode"
+    "settings.editor.selected.configurable": "proofread"
   },
   "keyToStringList": {
     "DatabaseDriversLRU": [
@@ -190,6 +192,12 @@
     ]
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\ws-bootcamp\bds02\src\main\java\com\devsuperior\bds02\controllers" />
+      <recent name="D:\ws-bootcamp\bds02\src\main\java\com\devsuperior\bds02\services" />
+    </key>
+  </component>
   <component name="RunDashboard">
     <option name="configurationTypes">
       <set>
@@ -197,7 +205,54 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.com.devsuperior.bds01.controllers in bds01">
+  <component name="RunManager" selected="JUnit.EventControllerIT">
+    <configuration name="CityControllerIT" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="bds02" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.devsuperior.bds02.controllers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.devsuperior.bds02.controllers" />
+      <option name="MAIN_CLASS_NAME" value="com.devsuperior.bds02.controllers.CityControllerIT" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CityControllerIT.findAllShouldReturnAllResourcesSortedByName" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="bds02" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.devsuperior.bds02.controllers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.devsuperior.bds02.controllers" />
+      <option name="MAIN_CLASS_NAME" value="com.devsuperior.bds02.controllers.CityControllerIT" />
+      <option name="METHOD_NAME" value="findAllShouldReturnAllResourcesSortedByName" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CityControllerIT.insertShouldInsertResource" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="bds02" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.devsuperior.bds02.controllers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.devsuperior.bds02.controllers" />
+      <option name="MAIN_CLASS_NAME" value="com.devsuperior.bds02.controllers.CityControllerIT" />
+      <option name="METHOD_NAME" value="insertShouldInsertResource" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="DepartmentControllerIT" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="bds01" />
       <extension name="coverage">
@@ -213,62 +268,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ProductResourceIT" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="dscatalog" />
+    <configuration name="EventControllerIT" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="bds02" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.hmbsoftwares.dscatalog.resources.*" />
+          <option name="PATTERN" value="com.devsuperior.bds02.controllers.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.hmbsoftwares.dscatalog.resources" />
-      <option name="MAIN_CLASS_NAME" value="com.hmbsoftwares.dscatalog.resources.ProductResourceIT" />
+      <option name="PACKAGE_NAME" value="com.devsuperior.bds02.controllers" />
+      <option name="MAIN_CLASS_NAME" value="com.devsuperior.bds02.controllers.EventControllerIT" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ProductResourceIT.updateShouldReturnNotFoundWhenIdDoesNotExist" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="dscatalog" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.hmbsoftwares.dscatalog.resources.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.hmbsoftwares.dscatalog.resources" />
-      <option name="MAIN_CLASS_NAME" value="com.hmbsoftwares.dscatalog.resources.ProductResourceIT" />
-      <option name="METHOD_NAME" value="updateShouldReturnNotFoundWhenIdDoesNotExist" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ProductServiceIT" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="dscatalog" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.hmbsoftwares.dscatalog.services.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.hmbsoftwares.dscatalog.services" />
-      <option name="MAIN_CLASS_NAME" value="com.hmbsoftwares.dscatalog.services.ProductServiceIT" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="com.devsuperior.bds01.controllers in bds01" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="bds01" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.devsuperior.bds01.controllers.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.devsuperior.bds01.controllers" />
-      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -276,6 +286,13 @@
     <configuration name="Bds01Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="bds01" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.devsuperior.bds01.Bds01Application" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Bds02Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="bds02" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.devsuperior.bds02.Bds02Application" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -289,11 +306,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.com.devsuperior.bds01.controllers in bds01" />
+        <item itemvalue="JUnit.EventControllerIT" />
+        <item itemvalue="JUnit.CityControllerIT" />
+        <item itemvalue="JUnit.CityControllerIT.insertShouldInsertResource" />
+        <item itemvalue="JUnit.CityControllerIT.findAllShouldReturnAllResourcesSortedByName" />
         <item itemvalue="JUnit.DepartmentControllerIT" />
-        <item itemvalue="JUnit.ProductResourceIT.updateShouldReturnNotFoundWhenIdDoesNotExist" />
-        <item itemvalue="JUnit.ProductResourceIT" />
-        <item itemvalue="JUnit.ProductServiceIT" />
       </list>
     </recent_temporary>
   </component>
@@ -314,8 +331,35 @@
       <workItem from="1656027180821" duration="173000" />
       <workItem from="1656027378767" duration="1190000" />
       <workItem from="1656068261449" duration="8292000" />
-      <workItem from="1656352293964" duration="7891000" />
+      <workItem from="1656352293964" duration="8382000" />
+      <workItem from="1656426905094" duration="33000" />
+      <workItem from="1656444478708" duration="824000" />
+      <workItem from="1656546161268" duration="1217000" />
+      <workItem from="1656611753446" duration="2994000" />
+      <workItem from="1656696600465" duration="5824000" />
     </task>
+    <task id="LOCAL-00001">
+      <created>1656378095416</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1656378095416</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Project Full completed">
+      <created>1656378489677</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1656378489677</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Project Full completed">
+      <created>1656701863665</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1656701863665</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -361,6 +405,10 @@
         <entry key="bb5d5ce3-b581-4824-a902-bf7befe78b82" value="TOOL_WINDOW" />
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Project Full completed" />
+    <option name="LAST_COMMIT_MESSAGE" value="Project Full completed" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
