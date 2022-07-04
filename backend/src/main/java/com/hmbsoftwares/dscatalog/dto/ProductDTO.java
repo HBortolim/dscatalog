@@ -9,20 +9,27 @@ import java.util.Set;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.PastOrPresent;
+import javax.validation.constraints.Positive;
+import javax.validation.constraints.Size;
 
 import com.hmbsoftwares.dscatalog.entities.Category;
 import com.hmbsoftwares.dscatalog.entities.Product;
 
 public class ProductDTO implements Serializable{
-
-	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	@Size(min = 5, max = 60,message = "Deve ter entre 5 e 60 caracteres")
+	@NotBlank
 	private String name;
+	@NotBlank
 	private String description;
+	@Positive
 	private Double price;
 	private String imgUrl;
+	@PastOrPresent(message = "A data do produto não pode ser futura")
 	private Instant date;
 
 	private List<CategoryDTO> categories = new ArrayList<>();

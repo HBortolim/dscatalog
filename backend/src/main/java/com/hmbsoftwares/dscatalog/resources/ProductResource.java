@@ -19,28 +19,30 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import com.hmbsoftwares.dscatalog.dto.ProductDTO;
 import com.hmbsoftwares.dscatalog.services.ProductService;
 
+import javax.validation.Valid;
+
 @RestController
 @RequestMapping(value = "/products")
 public class ProductResource {
 	
 	@Autowired
 	private ProductService service;
-	
+
 	@GetMapping
 	public ResponseEntity<Page<ProductDTO>> findAll(Pageable pageable){
-		
+
 		Page<ProductDTO> list = service.findAllPaged(pageable);
 		return ResponseEntity.ok().body(list);
 	}
-	
+
 	@GetMapping(value = "/{id}")
 	public ResponseEntity<ProductDTO> findById(@PathVariable Long id){
 		ProductDTO dto = service.findById(id);
 		return ResponseEntity.ok().body(dto);
 	}
-	
+
 	@PostMapping
-	public ResponseEntity<ProductDTO> insertProduct(@RequestBody ProductDTO dto){
+	public ResponseEntity<ProductDTO> insertProduct(@Valid @RequestBody ProductDTO dto){
 		dto = service.insertProduct(dto);
 		//insere no header da response a location do novo recurso adicionado
 		URI uri = ServletUriComponentsBuilder
@@ -50,13 +52,13 @@ public class ProductResource {
 				.toUri();
 		return ResponseEntity.created(uri).body(dto);
 	}
-	
+
 	@PutMapping(value = "/{id}")
-	public ResponseEntity<ProductDTO> updateProduct(@PathVariable Long id ,@RequestBody ProductDTO dto){
+	public ResponseEntity<ProductDTO> updateProduct(@PathVariable Long id ,@Valid @RequestBody ProductDTO dto){
 		dto = service.updateProduct(id, dto);
 		return ResponseEntity.ok().body(dto);
 	}
-	
+
 	@DeleteMapping(value = "/{id}")
 	public ResponseEntity<Void> deleteProduct(@PathVariable Long id){
 		service.deleteProduct(id);
