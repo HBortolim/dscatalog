@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b5864422-2a46-4f94-baad-a1d0c7185da6" name="Changes" comment="User CRUD">
+    <list default="true" id="b5864422-2a46-4f94-baad-a1d0c7185da6" name="Changes" comment="basic Bean validation">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/hmbsoftwares/dscatalog/dto/ProductDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/hmbsoftwares/dscatalog/dto/ProductDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/hmbsoftwares/dscatalog/dto/UserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/hmbsoftwares/dscatalog/dto/UserDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/hmbsoftwares/dscatalog/resources/exceptions/ResourceExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/hmbsoftwares/dscatalog/resources/exceptions/ResourceExceptionHandler.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -234,7 +233,7 @@
       <workItem from="1656611753446" duration="2994000" />
       <workItem from="1656696600465" duration="8359000" />
       <workItem from="1656877592929" duration="9202000" />
-      <workItem from="1656967779586" duration="1036000" />
+      <workItem from="1656967779586" duration="2500000" />
     </task>
     <task id="LOCAL-00001">
       <created>1656378095416</created>
@@ -285,7 +284,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656895907819</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="basic Bean validation">
+      <created>1656975338674</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1656975338674</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -337,7 +343,8 @@
     <MESSAGE value="cleaning code" />
     <MESSAGE value="ORM mapping and database seeding" />
     <MESSAGE value="User CRUD" />
-    <option name="LAST_COMMIT_MESSAGE" value="User CRUD" />
+    <MESSAGE value="basic Bean validation" />
+    <option name="LAST_COMMIT_MESSAGE" value="basic Bean validation" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
