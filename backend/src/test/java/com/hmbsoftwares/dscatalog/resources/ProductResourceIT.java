@@ -43,7 +43,7 @@ public class ProductResourceIT {
     public void findAllShouldReturnSortedPageWhenSortByName() throws Exception{
 
         ResultActions result =
-                mockMvc.perform(get("/products?page=0&size=12&sort=name,asc")
+                mockMvc.perform(get("/Products?page=0&size=12&sort=name,asc")
                         .accept(MediaType.APPLICATION_JSON));
 
         result.andExpect(status().isOk());
@@ -64,7 +64,7 @@ public class ProductResourceIT {
         String expectedDescription = productDTO.getDescription();
 
         ResultActions result =
-                mockMvc.perform(put("/products/{id}", existingId)
+                mockMvc.perform(put("/Products/{id}", existingId)
                         .content(jsonBody)
                         .contentType(MediaType.APPLICATION_JSON)
                         .accept(MediaType.APPLICATION_JSON));
@@ -82,7 +82,7 @@ public class ProductResourceIT {
         String jsonBody = objectMapper.writeValueAsString(productDTO);
 
         ResultActions result =
-                mockMvc.perform(put("/products/{id}", nonExistingId)
+                mockMvc.perform(put("/Products/{id}", nonExistingId)
                         .content(jsonBody)
                         .contentType(MediaType.APPLICATION_JSON)
                         .accept(MediaType.APPLICATION_JSON));

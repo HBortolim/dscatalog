@@ -4,11 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b5864422-2a46-4f94-baad-a1d0c7185da6" name="Changes" comment="cleaning code">
+    <list default="true" id="b5864422-2a46-4f94-baad-a1d0c7185da6" name="Changes" comment="ORM mapping and database seeding">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/hmbsoftwares/dscatalog/entities/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/hmbsoftwares/dscatalog/entities/Category.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/hmbsoftwares/dscatalog/services/CategoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/hmbsoftwares/dscatalog/services/CategoryService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/import.sql" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/import.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/hmbsoftwares/dscatalog/dto/ProductDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/hmbsoftwares/dscatalog/repositories/ProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/hmbsoftwares/dscatalog/repositories/ProductRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/hmbsoftwares/dscatalog/repositories/ProductRepositoryTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/hmbsoftwares/dscatalog/repositories/ProductRepositoryTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/hmbsoftwares/dscatalog/resources/ProductResourceIT.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/hmbsoftwares/dscatalog/resources/ProductResourceIT.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/hmbsoftwares/dscatalog/resources/ProductResourceTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/hmbsoftwares/dscatalog/resources/ProductResourceTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/hmbsoftwares/dscatalog/services/ProductServiceTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/hmbsoftwares/dscatalog/services/ProductServiceTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,32 +67,34 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/ws-bootcamp/bds02/src/main/java/com/devsuperior/bds02/controllers&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DtoCreateDialog.EQUALS_HASH_CODE_INITIAL_PROP_KEY": "false",
+    "DtoCreateDialog.TO_STRING_INITIAL_PROP_KEY": "false",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/ws-bootcamp/bds02/src/main/java/com/devsuperior/bds02/controllers",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.keymap"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;h2&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "h2"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\ws-bootcamp\bds02\src\main\java\com\devsuperior\bds02\controllers" />
@@ -102,7 +108,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.EventControllerIT">
+  <component name="RunManager" selected="JUnit.com.hmbsoftwares.dscatalog in dscatalog">
     <configuration name="CityControllerIT" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="bds02" />
       <extension name="coverage">
@@ -114,22 +120,6 @@
       <option name="PACKAGE_NAME" value="com.devsuperior.bds02.controllers" />
       <option name="MAIN_CLASS_NAME" value="com.devsuperior.bds02.controllers.CityControllerIT" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CityControllerIT.findAllShouldReturnAllResourcesSortedByName" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="bds02" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.devsuperior.bds02.controllers.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.devsuperior.bds02.controllers" />
-      <option name="MAIN_CLASS_NAME" value="com.devsuperior.bds02.controllers.CityControllerIT" />
-      <option name="METHOD_NAME" value="findAllShouldReturnAllResourcesSortedByName" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -150,21 +140,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DepartmentControllerIT" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="bds01" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.devsuperior.bds01.controllers.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.devsuperior.bds01.controllers" />
-      <option name="MAIN_CLASS_NAME" value="com.devsuperior.bds01.controllers.DepartmentControllerIT" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="EventControllerIT" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="bds02" />
       <extension name="coverage">
@@ -176,6 +151,35 @@
       <option name="PACKAGE_NAME" value="com.devsuperior.bds02.controllers" />
       <option name="MAIN_CLASS_NAME" value="com.devsuperior.bds02.controllers.EventControllerIT" />
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProductServiceIT" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="dscatalog" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.hmbsoftwares.dscatalog.services.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.hmbsoftwares.dscatalog.services" />
+      <option name="MAIN_CLASS_NAME" value="com.hmbsoftwares.dscatalog.services.ProductServiceIT" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="com.hmbsoftwares.dscatalog in dscatalog" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="dscatalog" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.hmbsoftwares.dscatalog.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.hmbsoftwares.dscatalog" />
+      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -203,11 +207,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.com.hmbsoftwares.dscatalog in dscatalog" />
+        <item itemvalue="JUnit.ProductServiceIT" />
         <item itemvalue="JUnit.EventControllerIT" />
         <item itemvalue="JUnit.CityControllerIT" />
         <item itemvalue="JUnit.CityControllerIT.insertShouldInsertResource" />
-        <item itemvalue="JUnit.CityControllerIT.findAllShouldReturnAllResourcesSortedByName" />
-        <item itemvalue="JUnit.DepartmentControllerIT" />
       </list>
     </recent_temporary>
   </component>
@@ -234,7 +238,7 @@
       <workItem from="1656546161268" duration="1217000" />
       <workItem from="1656611753446" duration="2994000" />
       <workItem from="1656696600465" duration="8359000" />
-      <workItem from="1656877592929" duration="1904000" />
+      <workItem from="1656877592929" duration="8688000" />
     </task>
     <task id="LOCAL-00001">
       <created>1656378095416</created>
@@ -264,7 +268,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656703215963</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="ORM mapping and database seeding">
+      <created>1656882637694</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1656882637694</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -314,7 +325,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Project Full completed" />
     <MESSAGE value="cleaning code" />
-    <option name="LAST_COMMIT_MESSAGE" value="cleaning code" />
+    <MESSAGE value="ORM mapping and database seeding" />
+    <option name="LAST_COMMIT_MESSAGE" value="ORM mapping and database seeding" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

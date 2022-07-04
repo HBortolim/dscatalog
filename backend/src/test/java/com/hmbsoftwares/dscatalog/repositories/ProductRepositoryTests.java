@@ -23,7 +23,7 @@ public class ProductRepositoryTests {
 	private ProductRepository repository;
 	
 	@BeforeEach
-	void setUp()throws Exception{
+	void setUp() throws Exception{
 		existingId= 1L;
 		nonExistingId = 1000L;
 		countTotalProducts = 25L;

@@ -37,9 +37,9 @@ public class ProductServiceTests {
 	private long nonExistingId;
 	private long dependentId;
 	private PageImpl<Product> page;
-	private Product product;
+	private Product Product;
 	private Category category;
-	private ProductDTO productDTO;
+	private ProductDTO ProductDTO;
 
 	@InjectMocks
 	private ProductService service;
@@ -55,21 +55,21 @@ public class ProductServiceTests {
 		existingId = 1L;
 		nonExistingId = 1000L;
 		dependentId = 4L;
-		product = Factory.createProduct();
+		Product = Factory.createProduct();
 		category = Factory.createCategory();
-		page = new PageImpl<>(List.of(product));
-		productDTO = Factory.createProductDTO();
+		page = new PageImpl<>(List.of(Product));
+		ProductDTO = Factory.createProductDTO();
 		
 		
 		Mockito.when(repository.findAll((Pageable)ArgumentMatchers.any())).thenReturn(page);
 		
-		Mockito.when(repository.save(ArgumentMatchers.any())).thenReturn(product);
+		Mockito.when(repository.save(ArgumentMatchers.any())).thenReturn(Product);
 		
-		Mockito.when(repository.findById(existingId)).thenReturn(Optional.of(product));
+		Mockito.when(repository.findById(existingId)).thenReturn(Optional.of(Product));
 		
 		Mockito.when(repository.findById(nonExistingId)).thenReturn(Optional.empty());
 		
-		Mockito.when(repository.getOne(existingId)).thenReturn(product);
+		Mockito.when(repository.getOne(existingId)).thenReturn(Product);
 		
 		Mockito.when(repository.getOne(nonExistingId)).thenThrow(ResourceNotFoundException.class);
 		
@@ -147,20 +147,20 @@ public class ProductServiceTests {
 	@Test
 	public void updateShouldReturnProductDTOWhenIdExists() {
 		
-		ProductDTO result = service.updateProduct(existingId, productDTO);
+		ProductDTO result = service.updateProduct(existingId, ProductDTO);
 		
 		Assertions.assertNotNull(result);
 		Assertions.assertDoesNotThrow(()-> {
-			service.updateProduct(existingId, productDTO);
+			service.updateProduct(existingId, ProductDTO);
 		});
 		Mockito.verify(repository,Mockito.times(2)).getOne(existingId);
-		Mockito.verify(repository,Mockito.times(2)).save(product);
+		Mockito.verify(repository,Mockito.times(2)).save(Product);
 	}
 	
 	@Test
 	public void updateShouldThrowResourceNotFoundExceptionWhenIdDoesNotExist() {
 		Assertions.assertThrows(ResourceNotFoundException.class, ()-> {
-			service.updateProduct(nonExistingId, productDTO);
+			service.updateProduct(nonExistingId, ProductDTO);
 		});
 		
 		Mockito.verify(repository).getOne(nonExistingId);
