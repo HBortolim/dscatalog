@@ -1,7 +1,10 @@
 package com.hmbsoftwares.dscatalog.dto;
 
+import com.hmbsoftwares.dscatalog.services.validation.UserInsertValid;
+
 import java.io.Serializable;
 
+@UserInsertValid
 public class UserInsertDTO extends UserDTO implements Serializable {
     private String password;
 

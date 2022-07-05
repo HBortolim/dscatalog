@@ -51,6 +51,7 @@ public class ResourceExceptionHandler {
 		err.setMessage(e.getMessage());
 		err.setPath(request.getRequestURI());
 
+		//percorre a lista do Beans Validation
 		for (FieldError f : e.getBindingResult().getFieldErrors()) {
 			err.addError(f.getField(),f.getDefaultMessage());
 		}
