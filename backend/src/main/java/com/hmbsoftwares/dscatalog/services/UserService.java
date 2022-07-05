@@ -4,6 +4,7 @@ import java.util.Optional;
 
 import com.hmbsoftwares.dscatalog.dto.RoleDTO;
 import com.hmbsoftwares.dscatalog.dto.UserInsertDTO;
+import com.hmbsoftwares.dscatalog.dto.UserUpdateDTO;
 import com.hmbsoftwares.dscatalog.entities.Role;
 import com.hmbsoftwares.dscatalog.repositories.RoleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -57,7 +58,7 @@ public class UserService {
     }
 
     @Transactional
-    public UserDTO updateUser(Long id, UserDTO dto) {
+    public UserDTO updateUser(Long id, UserUpdateDTO dto) {
         try {
             User entity = repository.getOne(id);
             copyDtoToEntity(dto,entity);

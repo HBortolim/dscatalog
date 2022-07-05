@@ -2,6 +2,7 @@ package com.hmbsoftwares.dscatalog.resources;
 
 import com.hmbsoftwares.dscatalog.dto.UserDTO;
 import com.hmbsoftwares.dscatalog.dto.UserInsertDTO;
+import com.hmbsoftwares.dscatalog.dto.UserUpdateDTO;
 import com.hmbsoftwares.dscatalog.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -44,9 +45,9 @@ public class UserResource {
     }
 
     @PutMapping(value = "/{id}")
-    public ResponseEntity<UserDTO> updateUser(@PathVariable Long id ,@Valid @RequestBody UserDTO dto){
-        dto = service.updateUser(id, dto);
-        return ResponseEntity.ok().body(dto);
+    public ResponseEntity<UserDTO> updateUser(@PathVariable Long id , @Valid @RequestBody UserUpdateDTO dto){
+        UserDTO newDto = service.updateUser(id, dto);
+        return ResponseEntity.ok().body(newDto);
     }
 
     @DeleteMapping(value = "/{id}")
