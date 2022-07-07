@@ -22,7 +22,6 @@ public class UserResource {
 
     @GetMapping
     public ResponseEntity<Page<UserDTO>> findAll(Pageable pageable){
-
         Page<UserDTO> list = service.findAllPaged(pageable);
         return ResponseEntity.ok().body(list);
     }
@@ -45,7 +44,7 @@ public class UserResource {
     }
 
     @PutMapping(value = "/{id}")
-    public ResponseEntity<UserDTO> updateUser(@PathVariable Long id , @Valid @RequestBody UserUpdateDTO dto){
+    public ResponseEntity<UserDTO> updateUser(@PathVariable Long id, @Valid @RequestBody UserUpdateDTO dto){
         UserDTO newDto = service.updateUser(id, dto);
         return ResponseEntity.ok().body(newDto);
     }
