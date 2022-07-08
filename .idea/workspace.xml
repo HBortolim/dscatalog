@@ -4,11 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b5864422-2a46-4f94-baad-a1d0c7185da6" name="Changes" comment="custom validation response">
+    <list default="true" id="b5864422-2a46-4f94-baad-a1d0c7185da6" name="Changes" comment="Token additional information">
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_security_2_4_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_config_5_4_5.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/hmbsoftwares/dscatalog/dto/UserInsertDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/hmbsoftwares/dscatalog/dto/UserInsertDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/hmbsoftwares/dscatalog/repositories/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/hmbsoftwares/dscatalog/repositories/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/hmbsoftwares/dscatalog/resources/exceptions/ResourceExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/hmbsoftwares/dscatalog/resources/exceptions/ResourceExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/hmbsoftwares/dscatalog/components/JwtTokenEnhancer.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/hmbsoftwares/dscatalog/components/JwtTokenEnhancer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/hmbsoftwares/dscatalog/config/AuthorizationServerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/hmbsoftwares/dscatalog/config/AuthorizationServerConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/hmbsoftwares/dscatalog/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/hmbsoftwares/dscatalog/entities/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,6 +101,9 @@
       <recent name="D:\ws-bootcamp\bds02\src\main\java\com\devsuperior\bds02\controllers" />
       <recent name="D:\ws-bootcamp\bds02\src\main\java\com\devsuperior\bds02\services" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.hmbsoftwares.dscatalog.dto" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="configurationTypes">
@@ -183,20 +188,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Bds01Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <module name="bds01" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.devsuperior.bds01.Bds01Application" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Bds02Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <module name="bds02" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.devsuperior.bds02.Bds02Application" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="DscatalogApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="dscatalog" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.hmbsoftwares.dscatalog.DscatalogApplication" />
@@ -239,7 +230,12 @@
       <workItem from="1656696600465" duration="8359000" />
       <workItem from="1656877592929" duration="9202000" />
       <workItem from="1656967779586" duration="3702000" />
-      <workItem from="1657018130393" duration="1245000" />
+      <workItem from="1657018130393" duration="1400000" />
+      <workItem from="1657028410587" duration="10211000" />
+      <workItem from="1657103698880" duration="612000" />
+      <workItem from="1657147355744" duration="2043000" />
+      <workItem from="1657215721418" duration="8537000" />
+      <workItem from="1657275806791" duration="1420000" />
     </task>
     <task id="LOCAL-00001">
       <created>1656378095416</created>
@@ -304,7 +300,35 @@
       <option name="project" value="LOCAL" />
       <updated>1656976746843</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="custom ConstraintValidator">
+      <created>1657019517613</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1657019517613</updated>
+    </task>
+    <task id="LOCAL-00011" summary="UserUpdateValidator">
+      <created>1657030273687</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1657030273687</updated>
+    </task>
+    <task id="LOCAL-00012" summary="implementing OAuth2 authorization server">
+      <created>1657233201346</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1657233201346</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Token additional information">
+      <created>1657234603163</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1657234603163</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -358,7 +382,11 @@
     <MESSAGE value="User CRUD" />
     <MESSAGE value="basic Bean validation" />
     <MESSAGE value="custom validation response" />
-    <option name="LAST_COMMIT_MESSAGE" value="custom validation response" />
+    <MESSAGE value="custom ConstraintValidator" />
+    <MESSAGE value="UserUpdateValidator" />
+    <MESSAGE value="implementing OAuth2 authorization server" />
+    <MESSAGE value="Token additional information" />
+    <option name="LAST_COMMIT_MESSAGE" value="Token additional information" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

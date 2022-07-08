@@ -24,6 +24,7 @@ public class JwtTokenEnhancer implements TokenEnhancer {
 
         Map<String, Object> map = new HashMap<>();
         map.put("userFirstName",user.getFirstName());
+        map.put("userLastName",user.getLastName());
         map.put("userId",user.getId());
 
         DefaultOAuth2AccessToken token = (DefaultOAuth2AccessToken) oAuth2AccessToken;
