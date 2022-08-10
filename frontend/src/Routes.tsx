@@ -3,7 +3,7 @@ import Navbar from "components/Navbar";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Catalog from "pages/Catalog";
 import Admin from "pages/Admin";
-import ProductDetails from "pages/ProductDetails/indes";
+import ProductDetails from "pages/ProductDetails";
 
 const Routes = () => (
   <BrowserRouter>
