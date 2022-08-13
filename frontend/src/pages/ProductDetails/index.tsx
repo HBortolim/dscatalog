@@ -22,7 +22,7 @@ const ProductDetails = () => {
     .then(response => {
       setProduct(response.data);
     });
-  }, [productId]) ; 
+  }, [productId]); 
 
   return (
     <div className="product-details-container">
