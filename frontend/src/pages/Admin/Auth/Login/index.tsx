@@ -12,7 +12,7 @@ type FormData = {
 const Login = () => {
   const { register, handleSubmit } = useForm<FormData>();
   const onSubmit = (formData : FormData) => {
-    console.log(formData)
+    console.log(formData);
   }
 
   return (
