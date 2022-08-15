@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios, { AxiosRequestConfig } from 'axios';
 import qs from 'qs';
 
 type LoginResponse = {
@@ -23,7 +23,7 @@ type LoginData = {
     password: string;
 }
 
-export const requestBackendLogin = (loginData : LoginData) => {
+export const requestBackendLogin = (loginData: LoginData) => {
     const headers = {
         'Content-Type': 'application/x-www-form-urlencoded',
         Authorization: basicHeader()
@@ -35,19 +35,29 @@ export const requestBackendLogin = (loginData : LoginData) => {
     })
 
     return axios({
-        method: 'POST', 
-        baseURL: BASE_URL, 
-        url: '/oauth/token', 
-        data, 
+        method: 'POST',
+        baseURL: BASE_URL,
+        url: '/oauth/token',
+        data,
         headers
     })
 }
 
-export const saveAuthData = (obj : LoginResponse) => {
+export const requestBackend = (config: AxiosRequestConfig) => {
+
+    const headers = config.withCredentials ? {
+        ...config.headers,
+        Authorization: "Bearer " + getAuthData().access_token
+    } : config.headers
+
+    return axios({ ...config, baseURL: BASE_URL, headers });
+}
+
+export const saveAuthData = (obj: LoginResponse) => {
     localStorage.setItem(tokenKey, JSON.stringify(obj));
 }
 
 export const getAuthData = () => {
     const str = localStorage.getItem(tokenKey) ?? '{}';
-    return JSON.parse(str) as LoginResponse;    
+    return JSON.parse(str) as LoginResponse;
 }
