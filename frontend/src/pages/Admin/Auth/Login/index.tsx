@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import ButtonIcon from "components/ButtonIcon";
 
 import "./styles.css";
@@ -14,12 +14,16 @@ type FormData = {
 const Login = () => {
   const [hasError, setHasError] = useState(false);
   const { register, handleSubmit, formState: {errors} } = useForm<FormData>();
+  //permite redirecionamento
+  const history = useHistory();
+
   const onSubmit = (formData: FormData) => {
     requestBackendLogin(formData)
       .then((response) => {
         console.log("sucesso", response);
         saveAuthData(response.data);
         setHasError(false);
+        history.push("/admin");
       })
       .catch((e) => {
         console.log("deu bosta: ", e);
