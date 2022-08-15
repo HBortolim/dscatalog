@@ -1,6 +1,8 @@
 import axios, { AxiosRequestConfig } from 'axios';
+import jwtDecode from 'jwt-decode';
 import qs from 'qs';
 import history from './history';
+
 
 type LoginResponse = {
     access_token: string;
@@ -9,6 +11,14 @@ type LoginResponse = {
     scope: string;
     userFirstName: string;
     userId: number;
+}
+
+type Role = 'ROLE_OPERATOR' | 'ROLE_ADMIN';
+
+type TokenData = {
+    exp : number;
+    user_name: string;
+    authorities: Role[];
 }
 
 export const BASE_URL = process.env.REACT_APP_BACKEND_URL ?? 'http://localhost:8080'; // ?? é o operador de coalescencia
@@ -82,3 +92,18 @@ axios.interceptors.response.use(function (response) {
     }
     return Promise.reject(error);
 });
+
+export const getTokenData = () : TokenData | undefined => {
+    try{
+        return jwtDecode(getAuthData().access_token) as TokenData;
+    }
+    catch(e){
+        return undefined;
+    }    
+}
+
+export const isAuthenticated = () : boolean => {
+    const tokenData = getTokenData();
+
+    return (tokenData && tokenData.exp * 1000 > Date.now()) ? true : false;
+}
