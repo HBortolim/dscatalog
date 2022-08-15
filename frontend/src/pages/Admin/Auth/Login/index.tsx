@@ -3,7 +3,7 @@ import ButtonIcon from "components/ButtonIcon";
 
 import "./styles.css";
 import { useForm } from "react-hook-form";
-import { requestBackendLogin } from "util/requests";
+import { requestBackendLogin, saveAuthData } from "util/requests";
 import { useState } from "react";
 
 type FormData = {
@@ -18,6 +18,7 @@ const Login = () => {
     requestBackendLogin(formData)
       .then((response) => {
         console.log("sucesso", response);
+        saveAuthData(response.data);
         setHasError(false);
       })
       .catch((e) => {
