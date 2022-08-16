@@ -1,10 +1,10 @@
 import { Link, useHistory } from "react-router-dom";
 import ButtonIcon from "components/ButtonIcon";
-
-import "./styles.css";
 import { useForm } from "react-hook-form";
 import { requestBackendLogin, saveAuthData } from "util/requests";
 import { useState } from "react";
+
+import "./styles.css";
 
 type FormData = {
   username: string;
