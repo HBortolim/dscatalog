@@ -26,3 +26,31 @@
     color: #fff;
     font-weight: 700;
 }
+
+.nav-login-logout {
+    display: none;
+    color: #fff;
+    text-transform: uppercase;
+    margin-right: 15px;
+}
+
+.nav-username {
+    display: none;
+}
+
+@media(min-width: 768px) {
+    .nav-login-logout {
+        display: unset;
+    }
+}
+
+@media(min-width: 992px) {
+    .nav-login-logout {
+        margin-right: 40px;
+    }
+
+    .nav-username {
+        display: unset;
+        margin-right: 20px;
+    }
+}
