@@ -1,8 +1,45 @@
 import "./styles.css";
-import 'bootstrap/js/src/collapse.js';
+import "bootstrap/js/src/collapse.js";
 import { Link, NavLink } from "react-router-dom";
+import {
+  getTokenData,
+  isAuthenticated,
+  removeAuthData,
+  TokenData,
+} from "util/requests";
+import { useEffect, useState } from "react";
+import history from "util/history";
+
+type AuthData = {
+  authenticated: boolean;
+  tokenData?: TokenData;
+};
 
 const Navbar = () => {
+  const [authData, setauthData] = useState<AuthData>({ authenticated: false });
+
+  useEffect(() => {
+    if (isAuthenticated()) {
+      setauthData({
+        authenticated: true,
+        tokenData: getTokenData(),
+      });
+    } else {
+      setauthData({
+        authenticated: false,
+      });
+    }
+  }, []);
+
+  const handleLogoutClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
+    event.preventDefault();
+    removeAuthData();
+    setauthData({
+      authenticated: false,
+    });
+    history.replace("/");
+  };
+
   return (
     <nav className="navbar navbar-expand-md navbar-dark bg-primary main-nav">
       <div className="container-fluid">
@@ -28,12 +65,28 @@ const Navbar = () => {
               </NavLink>
             </li>
             <li>
-              <NavLink to="/products" activeClassName="active">CATÁLOGO</NavLink>
+              <NavLink to="/products" activeClassName="active">
+                CATÁLOGO
+              </NavLink>
             </li>
             <li>
-              <NavLink to="/admin" activeClassName="active">ADMIN</NavLink>
+              <NavLink to="/admin" activeClassName="active">
+                ADMIN
+              </NavLink>
             </li>
           </ul>
+        </div>
+        <div className="">
+          {authData.authenticated ? (
+            <>
+              <span>{authData.tokenData?.user_name}</span>
+              <a href="#sad" onClick={handleLogoutClick}>
+                Logout
+              </a>
+            </>
+          ) : (
+            <Link to="/admin/auth">Login</Link>
+          )}
         </div>
       </div>
     </nav>
