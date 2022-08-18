@@ -1,10 +1,11 @@
 import { Link, useHistory } from "react-router-dom";
 import ButtonIcon from "components/ButtonIcon";
 import { useForm } from "react-hook-form";
-import { requestBackendLogin, saveAuthData } from "util/requests";
-import { useState } from "react";
+import { getTokenData, requestBackendLogin, saveAuthData } from "util/requests";
+import { useContext, useState } from "react";
 
 import "./styles.css";
+import { AuthContext } from "AuthContext";
 
 type FormData = {
   username: string;
@@ -12,21 +13,28 @@ type FormData = {
 };
 
 const Login = () => {
+
+  const { setAuthContextData } = useContext(AuthContext);
+
   const [hasError, setHasError] = useState(false);
+
   const { register, handleSubmit, formState: {errors} } = useForm<FormData>();
   //permite redirecionamento
   const history = useHistory();
+  
 
   const onSubmit = (formData: FormData) => {
     requestBackendLogin(formData)
       .then((response) => {
-        console.log("sucesso", response);
         saveAuthData(response.data);
         setHasError(false);
+        setAuthContextData({
+          authenticated: true,
+          tokenData: getTokenData(),
+        })
         history.push("/admin");
       })
       .catch((e) => {
-        console.log("deu bosta: ", e);
         setHasError(true);
       });
   };
