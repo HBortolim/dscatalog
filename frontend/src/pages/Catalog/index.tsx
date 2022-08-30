@@ -23,7 +23,6 @@ const Catalog = () => {
         size: 12,
       },
     };
-
     setIsLoading(true);
     requestBackend(params)
       .then((response) => {
