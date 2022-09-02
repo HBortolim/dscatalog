@@ -3,24 +3,57 @@ import "./styles.css";
 const Form = () => {
   return (
     <div className="product-crud-container">
-      <div className="base-card product-crud-form-card"></div>
-      <h1 className="product-crud-form-title">Dados do Produto</h1>
-      <form action="">
-        <div className="row">
-            <div className="col-lg-6">
-                <input type="text" name="" id="" className="form-control base-input"/>
-                <input type="text" name="" id="" className="form-control base-input"/>
-                <input type="text" name="" id="" className="form-control base-input"/>
+      <div className="base-card product-crud-form-card">
+        <h1 className="product-crud-form-title">Dados do Produto</h1>
+        <form action="">
+          <div className="row product-crud-inputs-container">
+            <div className="col-lg-6 product-crud-inputs-left-container">
+              <div className="product-crud-input margin-bottom-30">
+                <input
+                  type="text"
+                  name=""
+                  id=""
+                  className="form-control base-input"
+                />
+              </div>
+              <div className="product-crud-input margin-bottom-30">
+                <input
+                  type="text"
+                  name=""
+                  id=""
+                  className="form-control base-input"
+                />
+              </div>
+              <div className="product-crud-input">
+                <input
+                  type="text"
+                  name=""
+                  id=""
+                  className="form-control base-input"
+                />
+              </div>
             </div>
             <div className="col-lg-6">
-                <textarea name="" id="" cols={30} rows={10} className="form-control base-input"></textarea>
+              <div>
+                <textarea
+                  name=""
+                  id=""
+                  rows={10}
+                  className="form-control base-input h-auto"
+                />
+              </div>
             </div>
-        </div>
-        <div className="row">
-            <button className="btn btn-outline-danger">Cancelar</button>
-            <button className="btn btn-outline-primary">Salvar</button>
-        </div>
-      </form>
+          </div>
+          <div className="product-crud-buttons-container">
+            <button className="btn btn-outline-danger product-crud-button text-danger">
+              Cancelar
+            </button>
+            <button className="btn btn-primary product-crud-button text-white">
+              Salvar
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
   );
 };
