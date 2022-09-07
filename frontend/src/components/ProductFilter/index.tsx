@@ -9,15 +9,31 @@ import "./styles.css";
 
 type ProductFilterData = {
   name: string;
-  category: Category;
+  category: Category | null;
 };
 
 const ProductFilter = () => {
   const [selectCategories, setSelectCategories] = useState<Category[]>([]);
 
-  const { register, handleSubmit, control } = useForm<ProductFilterData>();
+  const { register, handleSubmit, setValue, getValues, control } =
+    useForm<ProductFilterData>();
 
   const onSubmit = (formData: ProductFilterData) => {};
+
+  const handleFormClear = () => {
+    setValue('name','');
+    setValue('category',null);
+  };
+
+  const handleChangeCategory = (value: Category) => {
+    setValue('category', value);
+    const obj: ProductFilterData = {
+      name: getValues('name'),
+      category: getValues('category')
+    }
+
+    console.log('enviou', obj);
+  }
 
   useEffect(() => {
     requestBackend({ url: "/categories" }).then((response) => {
@@ -52,14 +68,18 @@ const ProductFilter = () => {
                   isClearable
                   classNamePrefix="product-filter-select"
                   placeholder="Categoria"
+                  onChange={value => handleChangeCategory(value as Category)}
                   getOptionLabel={(category: Category) => category.name}
                   getOptionValue={(category: Category) => String(category.id)}
                 />
               )}
             />
           </div>
-          <button className="btn btn-outline-secondary product-filter-clear">
-            Limpar <span className="product-filter-clear-word">Filtro</span>{" "}
+          <button
+            onClick={handleFormClear}
+            className="btn btn-outline-secondary product-filter-clear"
+          >
+            Limpar <span className="product-filter-clear-word">Filtro</span>
           </button>
         </div>
       </form>
