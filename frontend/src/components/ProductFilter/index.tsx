@@ -7,33 +7,39 @@ import { requestBackend } from "util/requests";
 
 import "./styles.css";
 
-type ProductFilterData = {
+export type ProductFilterData = {
   name: string;
   category: Category | null;
 };
 
-const ProductFilter = () => {
+type Props = {
+  onSubmitFilter: (data: ProductFilterData) => void;
+};
+
+const ProductFilter = ({ onSubmitFilter }: Props) => {
   const [selectCategories, setSelectCategories] = useState<Category[]>([]);
 
   const { register, handleSubmit, setValue, getValues, control } =
     useForm<ProductFilterData>();
 
-  const onSubmit = (formData: ProductFilterData) => {};
+  const onSubmit = (formData: ProductFilterData) => {
+    onSubmitFilter(formData);
+  };
 
   const handleFormClear = () => {
-    setValue('name','');
-    setValue('category',null);
+    setValue("name", "");
+    setValue("category", null);
   };
 
   const handleChangeCategory = (value: Category) => {
-    setValue('category', value);
+    setValue("category", value);
     const obj: ProductFilterData = {
-      name: getValues('name'),
-      category: getValues('category')
-    }
+      name: getValues("name"),
+      category: getValues("category"),
+    };
 
-    console.log('enviou', obj);
-  }
+    onSubmitFilter(obj);
+  };
 
   useEffect(() => {
     requestBackend({ url: "/categories" }).then((response) => {
@@ -68,7 +74,7 @@ const ProductFilter = () => {
                   isClearable
                   classNamePrefix="product-filter-select"
                   placeholder="Categoria"
-                  onChange={value => handleChangeCategory(value as Category)}
+                  onChange={(value) => handleChangeCategory(value as Category)}
                   getOptionLabel={(category: Category) => category.name}
                   getOptionValue={(category: Category) => String(category.id)}
                 />

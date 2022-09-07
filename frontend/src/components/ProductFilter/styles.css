@@ -12,10 +12,12 @@
 
 .product-filter-name-container input {
     border: none;
+    background-color: #fff;
 }
 
 .product-filter-name-container input:focus {
     box-shadow: none;
+    background-color: #fff;
 }
 
 .product-filter-name-container input::placeholder {
