@@ -1,6 +1,7 @@
 import { AxiosRequestConfig } from "axios";
 import ProductPrice from "components/ProductPrice";
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
 import { Product } from "types/product";
 import { requestBackend } from "util/requests";
 import CategoryBadge from "../CategoryBadge";
@@ -25,6 +26,9 @@ const ProductCrudCard = ({ product, onDelete }: Props) => {
       withCredentials: true,
     };
     requestBackend(config).then((response) => {
+      toast.success('Produto apagado com sucesso!', {
+        autoClose: 2000,
+      });
       onDelete();
     });
   };
